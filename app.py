@@ -94,5 +94,9 @@ def get_scatter_chart(entered_site, payload_range):
         title='Payload vs. Outcome for '+entered_site)
         return fig
 # Run the app
+
+app = dash.Dash(__name__)
+server = app.server
+
 if __name__ == '__main__':
     app.run()
