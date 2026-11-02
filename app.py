@@ -55,6 +55,12 @@ app.layout = html.Div(
             "Select payload mass range (kg):",
             style={"fontWeight": "bold"},
         ),
+        html.Div(
+    style={
+        "padding": "15px 25px 40px",
+        "overflow": "visible",
+    },
+    children=[
         dcc.RangeSlider(
             id="payload-slider",
             min=0,
@@ -65,10 +71,15 @@ app.layout = html.Div(
                 for value in range(0, 20001, 5000)
             },
             value=[min_payload, max_payload],
-            tooltip={"placement": "bottom", "always_visible": True},
+            tooltip={
+                "placement": "bottom",
+                "always_visible": True,
+            },
             updatemode="drag",
             allowCross=False,
         ),
+    ],
+),
 
         dcc.Graph(id="success-payload-scatter-chart"),
     ],
